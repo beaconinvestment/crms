@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        Eloquent::unguard();
+
+        // call our class and run our seeds
+        $this->call('beacontableSeeder');
+        $this->command->info('beacon app seeds finished.');
     }
 }
