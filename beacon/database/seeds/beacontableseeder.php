@@ -1,8 +1,10 @@
 <?php
-
+namespace App;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class beacontableseeder extends Seeder
+
+class BeacontableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,7 +22,7 @@ class beacontableseeder extends Seeder
         // seed our customer table -----------------------
 
 
-        // bear 1 is named Lawly. She is extremely dangerous. Especially when hungry.
+
         $bearLawly = Customer::create(array(
             'name'         => 'Ahmed',
             'type'         => 'Invester'

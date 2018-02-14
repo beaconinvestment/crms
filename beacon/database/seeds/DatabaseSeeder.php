@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
         Eloquent::unguard();
 
         // call our class and run our seeds
-        $this->call('beacontableSeeder');
+        $this->call('BeacontableSeeder');
         $this->command->info('beacon app seeds finished.');
     }
 }
