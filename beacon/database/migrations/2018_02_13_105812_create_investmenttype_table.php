@@ -19,7 +19,7 @@ class CreateInvestmenttypeTable extends Migration
 
             $table->string('type');
 
-            $table->integer('customer_id'); // which bear climbs this tree
+//            $table->integer('customer_id'); // which bear climbs this tree
 
             $table->timestamps();
         });

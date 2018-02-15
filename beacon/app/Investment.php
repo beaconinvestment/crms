@@ -12,12 +12,16 @@ class Investment extends Model
 
     protected $table = 'investment';
 
+    public static function create($array)
+    {
+    }
+
     // DEFINE RELATIONSHIPS --------------------------------------------------
-    public function investment() {
+    public function investment_type() {
         return $this->belongsTo('Investment_type');
 
     }
     public function customer(){
-        return $this->hasMany('Investment');
+        return $this->hasMany('customer');
     }
 }
