@@ -29,15 +29,15 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->command->info('The customers are alive!');
 
-//        DB::table('investment_type')->insert([
-//            'type' => 'Residential'
-//        ]);
-//
-//        DB::table('investment')->insert([
-//           'total_amount'=> '5000',
-//            'customer_id' => '1',
-//            'investType'=>'1'
-//        ]);
+        DB::table('investment_type')->insert([
+            'type' => 'Residential'
+        ]);
+
+        DB::table('investment')->insert([
+           'total_amount'=> '5000',
+            'customer_id' => '1',
+            'investType'=>'1'
+        ]);
 
     }
 }
