@@ -6,7 +6,7 @@
 
     {{--<!-- CSS -->--}}
     {{--<!-- BOOTSTRAP -->--}}
-    {{--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">--}}
+
     {{--<style>--}}
         {{--body { padding-top:50px; } /* add some padding to the top of our site */--}}
     {{--</style>--}}
@@ -42,6 +42,7 @@
         <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <style>
         table {
             font-family: arial, sans-serif;
@@ -61,21 +62,70 @@
     </style>
 </head>
 <body>
-
+<div class="container">
+    <div>
 <h2>Customers Table</h2>
-@foreach ($customer as $customers)
+
 
 <!-- GET OUR BASIC BEAR INFORMATION -->
 {{--<h2>{{ $customers->name }} <small>{{ $customers->cell_no }}</small></h2>--}}
+<div class="col-md-12">
 <table>
+
     <tr>
-        <th>{{ $customers->name }}</th>
-        <th>{{ $customers->cell_no }}</th>
+        <th>Name</th>
+        <th>CellPhone</th>
+    </tr>
+    @foreach ($customer as $customers)
+    <tr>
+
+        <td>{{ $customers->name }}</td>
+        <td>{{ $customers->cell_no }}</td>
 
     </tr>
-
+    @endforeach
 </table>
-@endforeach
+</div>
+    </div>
+    <div>
+<h2>Investment Table</h2>
+<div class="col-md-12">
+<table>
+
+    <tr>
+        <th>Total investment amount</th>
+        <th>Customer id</th>
+        <th>Invest Type</th>
+    </tr>
+    @foreach ($investment as $investments)
+        <tr>
+
+            <td>{{ $investments->total_amount }}</td>
+            <td>{{ $investments->customer_id }}</td>
+            <td>{{ $investments->investType }}</td>
+
+        </tr>
+    @endforeach
+</table>
+</div>
+</div>
+</div>
+{{--<h2>Investment type Table</h2>--}}
+{{--<table>--}}
+
+    {{--<tr>--}}
+        {{--<th>Type</th>--}}
+
+    {{--</tr>--}}
+    {{--@foreach ($investment_types as $investment_type)--}}
+        {{--<tr>--}}
+
+            {{--<td>{{ $investment_type->type }}</td>--}}
+
+
+        {{--</tr>--}}
+    {{--@endforeach--}}
+{{--</table>--}}
 </body>
 </html>
 

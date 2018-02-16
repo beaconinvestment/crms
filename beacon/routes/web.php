@@ -14,11 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('eloquent', function() {
-
-    return View::make('eloquent')
-
-        // all the bears (will also return the fish, trees, and picnics that belong to them)
-        ->with('customer',\App\Customer::all());
-
-});
+//Route::get('eloquent', function() {
+//
+//    return View::make('eloquent')
+//
+//
+//        ->with('customer',\App\Customer::all());
+//
+//
+//});
+//Route::get('eloquent','beaconcontroller@Show_All');
+//Route::resource('eloquent','BeaconsController');
+Route::resource('eloquent','BeaconicController');
