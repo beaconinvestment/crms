@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Customer;
+
+use App\Investment;
 use Illuminate\Http\Request;
 
-class BeaconicController extends Controller
+class investmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,8 @@ class BeaconicController extends Controller
      */
     public function index()
     {
-        $customer = Customer::all()->toArray();
-        return view('eloquent.index', compact('customer'));
+        $investment = Investment::all()->toArray();
+        return view('investment.index', compact('investment'));
     }
 
     /**
@@ -35,14 +36,15 @@ class BeaconicController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = $this->validate(request(), [
-            'name' => 'required',
-            'cell_no' => 'required'
+        $investment = $this->validate(request(), [
+            'total_amount' => 'required',
+            'customer_id' => 'required',
+            'investType' => 'required'
         ]);
 
-        Customer::create($customer);
+        Investment::create($investment);
 
-        return back()->with('success', 'Customer has been added');
+        return back()->with('success', 'Investment has been added');
     }
 
     /**
@@ -53,7 +55,8 @@ class BeaconicController extends Controller
      */
     public function show($id)
     {
-        //
+        $investment = Investment::find($id);
+        return view('eloquent.edit',compact('investment','id'));
     }
 
     /**
@@ -64,8 +67,7 @@ class BeaconicController extends Controller
      */
     public function edit($id)
     {
-        $customer = Customer::find($id);
-        return view('eloquent.edit',compact('customer','id'));
+        //
     }
 
     /**
@@ -77,15 +79,16 @@ class BeaconicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $customer = Customer::find($id);
+        $investment = Investment::find($id);
         $this->validate(request(), [
-            'name' => 'required',
-            'cell_no' => 'required|numeric'
+            'total_amount' => 'required',
+            'customer_id' => 'required',
+            'investType' => 'required'
         ]);
-        $customer->name = $request->get('name');
-        $customer->cell_no = $request->get('cell_no');
-        $customer->save();
-        return redirect('eloquent')->with('success',' Customer has been updated');
+        $investment->total_amount = $request->get('total_amount');
+        $investment->customer_id = $request->get('customer_id');
+        $investment->save();
+        return redirect('eloquent')->with('success',' Investment has been updated');
     }
 
     /**
@@ -96,8 +99,8 @@ class BeaconicController extends Controller
      */
     public function destroy($id)
     {
-        $customer = Customer::find($id);
-        $customer->delete();
-        return redirect('customer')->with('success','Customer has been  deleted');
+        $investment = Investment::find($id);
+        $investment->delete();
+        return redirect('eloquent')->with('success','Investment has been  deleted');
     }
 }

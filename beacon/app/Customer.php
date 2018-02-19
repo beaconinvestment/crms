@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-    protected $fillable = array('name', 'type');
+    protected $fillable = array('name', 'cell_no');
 
     // DEFINE RELATIONSHIPS --------------------------------------------------
     // each customer HAS one investment to do

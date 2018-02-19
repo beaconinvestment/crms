@@ -13,6 +13,9 @@
     .jumbotron .h1, .jumbotron h1 {
         color:white;
     }
+    .jumbotron .p, .jumbotron p {
+        color:white;
+    }
 </style>
 </head>
 <body>
@@ -27,7 +30,7 @@
             <a class="navbar-brand pull-left" href="#">Welcome Admin!!!!</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
 
         </ul>
     </div>

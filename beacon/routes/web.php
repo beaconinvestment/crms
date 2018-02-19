@@ -26,3 +26,4 @@ Route::get('/', function () {
 //Route::get('eloquent','beaconcontroller@Show_All');
 //Route::resource('eloquent','BeaconsController');
 Route::resource('eloquent','BeaconicController');
+Route::resource('investment','investmentController');
