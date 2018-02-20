@@ -15,7 +15,7 @@ class Investmenttype extends Model
 
     // DEFINE RELATIONSHIPS --------------------------------------------------
     public function investment() {
-        return $this->hasMany('app\Investment');
+        return $this->hasMany(Investment::class);
     }
 
 }

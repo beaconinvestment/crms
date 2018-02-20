@@ -26,16 +26,23 @@ Route::get('/', function () {
 //Route::get('eloquent','beaconcontroller@Show_All');
 //Route::resource('eloquent','BeaconsController');
 //Route::resource('eloquent','BeaconicController');
-//Route::resource('investment','investmentController');
+Route::resource('investment','investmentController');
 
-Route::get('gettwo',function(){
-
-//    $one=App\Investment::customer()->where('total_amount','=',5000)->get();
-//    $one = App\Customer::find(7)->investment()->get();
-    $two = App\Customer::has('investment')->get();
-    return view('new',compact('two',$two));
-
-});
+//Route::get('gettwo',function(){
+//
+////    $one=App\Investment::customer()->where('total_amount','=',5000)->get();
+////    $one = App\Customer::find(7)->investment()->get();
+////    $two = App\Customer::has('investment')
+////        ->whereExists(function ($query) {
+////            $query->select(DB::raw(1))
+////                ->from('customers')
+////                ->whereRaw('customers.name = name');
+////        })
+////
+////        ->get();
+////    return view('new',compact('two',$two));
+//
+//});
 //Route::get('gettwo',function(){
 //
 ////    $one=App\Investment::customer()->where('total_amount','=',5000)->get();
@@ -50,19 +57,19 @@ use Illuminate\Support\Facades\Input;
 Route::any( '/search', function () {
     $q = Input::get ( 'q' );
     if($q != ""){
-        $comics = App\Customer::where ( 'name', 'LIKE', '%' . $q . '%' )->orWhere ( 'comic_writer', 'LIKE', '%' . $q . '%' )->paginate (5)->setPath ( '' );
+        $comics = App\Customer::where ( 'total_amount', 'LIKE', '%' . $q . '%' )->setPath ( '' );
         $pagination = $comics->appends ( array (
             'q' => Input::get ( 'q' )
         ) );
         if (count ( $comics ) > 0)
-            return view ( 'welcome' )->withDetails( $comics )->withQuery ( $q );
+            return view ( 'one' )->withDetails( $comics )->withQuery ( $q );
 
     }
-    return view ( 'welcome' )->withMessage ( 'No Details found. Try to search again !' );
+    return view ( 'one' )->withMessage ( 'No Details found. Try to search again !' );
 } );
 
 /* Route for get all records with paginate 6 records*/
 Route::get ( '/records', function () {
-    $dummyDetails = Comic::paginate(6);
-    return view ( 'welcome' )->withComics($dummyDetails);
+    $dummyDetails = Customer::paginate(6);
+    return view ( 'investment.index' )->withComics($dummyDetails);
 } );

@@ -18,10 +18,10 @@ class Investment extends Model
 
     // DEFINE RELATIONSHIPS --------------------------------------------------
     public function investment_type() {
-        return $this->belongsTo('Investment_type');
+        return $this->belongsTo(Investmenttype::class);
 
     }
     public function customer(){
-        return $this->hasMany(Investment::class);
+        return $this->belongsto(Investment::class);
     }
 }
