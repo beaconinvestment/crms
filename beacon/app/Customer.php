@@ -11,7 +11,7 @@ class Customer extends Model
     // DEFINE RELATIONSHIPS --------------------------------------------------
     // each customer HAS one investment to do
     public function investment() {
-        return $this->hasMany('Investment'); // this matches the Eloquent model
+        return $this->hasMany(Investment::class); // this matches the Eloquent model
     }
 
 

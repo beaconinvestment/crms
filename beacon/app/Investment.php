@@ -22,6 +22,6 @@ class Investment extends Model
 
     }
     public function customer(){
-        return $this->hasMany('customer');
+        return $this->hasMany(Investment::class);
     }
 }

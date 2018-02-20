@@ -24,19 +24,19 @@ class DatabaseSeeder extends Seeder
 //            'password' => bcrypt('secret'),
 //        ]);
         DB::table('customers')->insert([
-            'name' => 'Asghar',
-            'cell_no' => '0332678890'
+            'name' => 'Zahid khan',
+            'cell_no' => '03336002265'
         ]);
         $this->command->info('The customers are alive!');
 
         DB::table('investment_type')->insert([
-            'type' => 'Residential'
+            'type' => 'Cesidential'
         ]);
 
         DB::table('investment')->insert([
-           'total_amount'=> '40000',
-            'customer_id' => '3',
-            'investType'=>'2'
+           'total_amount'=> '45000',
+            'customer_id' => '12',
+            'investType'=>'3'
         ]);
 
     }
