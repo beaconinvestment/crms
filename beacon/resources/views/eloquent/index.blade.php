@@ -16,51 +16,86 @@
     .jumbotron .p, .jumbotron p {
         color:white;
     }
+
+
 </style>
 </head>
 <body>
-<div class="jumbotron" style="margin-bottom: 0px;background-color: #0069d9;">
+<div class="jumbotron bg" style="margin-bottom:0px;font-family: Georgia;background-color: #0056b3">
     <h1>Beacon Investment CRMS</h1>
     <p>Welcome to crms system admin here you can edit , delete and manage your data....</p>
 </div>
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand pull-left" href="#">Welcome Admin!!!!</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+{{--<nav class="navbar navbar-default">--}}
+    {{--<div class="container-fluid">--}}
+        {{--<div class="navbar-header">--}}
+            {{--<a class="navbar-brand pull-left" href="#">Welcome Admin!!!!</a>--}}
+        {{--</div>--}}
+        {{--<ul class="nav navbar-nav">--}}
+            {{--<li class="active"><a href="/">Home</a></li>--}}
 
-        </ul>
-    </div>
-</nav>
-<div class="container" style="margin-left: 0px;
-    margin-right: 0px;">
-<div class="container col-lg-2 pull-left" style="padding-right: 0px;
-    padding-left: 0px;">
+        {{--</ul>--}}
+    {{--</div>--}}
+{{--</nav>--}}
+{{--<div class="container" style="margin-left: 0px;--}}
+    {{--margin-right: 0px;">--}}
+{{--<div class="container col-lg-2 pull-left" style="padding-right: 0px;--}}
+    {{--padding-left: 0px;">--}}
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header center-block">
-                <a class="navbar-brand pull-left" href="#">Options</a>
-            </div>
-            <button type="button" class="btn btn-primary btn-block">Option 1</button>
-            <button type="button" class="btn btn-primary btn-block">Option 2</button>
-            <button type="button" class="btn btn-primary btn-block">Option 3</button>
-            <button type="button" class="btn btn-primary btn-block">Option 4</button>
-            <button type="button" class="btn btn-primary btn-block">Option 5</button>
-            <button type="button" class="btn btn-primary btn-block">Option 6</button>
+    {{--<nav class="navbar navbar-default">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<div class="navbar-header center-block">--}}
+                {{--<a class="navbar-brand pull-left" href="#"></a>--}}
+            {{--</div>--}}
+           {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
+            {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
+            {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
+            {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
+            {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
             {{--<ul class="nav navbar-nav">--}}
 
 
             {{--</ul>--}}
-        </div>
-    </nav>
+        {{--</div>--}}
+    {{--</nav>--}}
 
 
+{{--</div>--}}
+<div class="container col-lg-12">
+<br>
+</div>
+<div class="container col-lg-2" style="
+    padding-left: 0px;
+    padding-right: 0px;">
+
+    <ul class="btn-group" style="padding-left: 0px;width: 98px;">
+        <a href="\"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-home"></span></h3></button></a>
+        <a href="\investment"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-user"></span></h3></button></a>
+        <a href="\eloquent"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-share"></span></h3></button></a>
+        <a href="\eloquent"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-edit"></span></h3></button></a>
+        <a href="\eloquent"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-camera"></span></h3></button></a>
+        {{--<button type="button" class="btn btn-primary btn-block text-center"><h2><span class="glyphicon glyphicon-book"></span></h2><br></button>--}}
+        {{--<button type="button" class="btn btn-primary btn-block text-center"><h2><span class="glyphicon glyphicon-share"></span></h2><br></button>--}}
+    </ul>
 </div>
 <div class="container col-lg-10">
+    <div class="container">
+
+
+
+    </div>
+    <div class="container col-lg-10">
+        <form action="/searchcustomer" method="POST" role="search">
+            {{ csrf_field() }}
+            <div class="input-group">
+                <input type="text" class="form-control" name="q" placeholder="Search Customers Here..."> <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button></span>
+                </span>
+            </div>
+        </form>
+        <br />
     <br />
 
     @if (\Session::has('success'))
@@ -71,9 +106,13 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Cell_no</th>
+            <th>Customer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Cell NO</th>
+            <th>CNIC</th>
+            <th>Address</th>
+
             <th colspan="2">Action</th>
         </tr>
         </thead>
@@ -81,8 +120,11 @@
         @foreach($customer as $customers)
             <tr>
                 <td>{{$customers['id']}}</td>
-                <td>{{$customers['name']}}</td>
+                <td>{{$customers['fname']}}</td>
+                <td>{{$customers['lname']}}</td>
                 <td>{{$customers['cell_no']}}</td>
+                <td>{{$customers['cnic']}}</td>
+                <td>{{$customers['address']}}</td>
                 <td><a href="{{action('BeaconicController@edit', $customers['id'])}}" class="btn btn-warning">Edit</a></td>
                 <td>
                     <form action="{{action('BeaconicController@destroy', $customers['id'])}}" method="post">

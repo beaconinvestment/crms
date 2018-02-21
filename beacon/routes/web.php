@@ -24,8 +24,8 @@ Route::get('/', function () {
 //
 //});
 //Route::get('eloquent','beaconcontroller@Show_All');
-//Route::resource('eloquent','BeaconsController');
-//Route::resource('eloquent','BeaconicController');
+Route::resource('eloquent','BeaconsController');
+Route::resource('eloquent','BeaconicController');
 Route::resource('investment','investmentController');
 
 //Route::get('gettwo',function(){
@@ -57,19 +57,37 @@ use Illuminate\Support\Facades\Input;
 Route::any( '/search', function () {
     $q = Input::get ( 'q' );
     if($q != ""){
-        $comics = App\Customer::where ( 'total_amount', 'LIKE', '%' . $q . '%' )->setPath ( '' );
-        $pagination = $comics->appends ( array (
-            'q' => Input::get ( 'q' )
-        ) );
+        $comics = App\Investment::where ( 'total_amount', 'LIKE', '%' . $q . '%' )->get();
+//        $pagination = $comics->appends ( array (
+//            'q' => Input::get ( 'q' )
+//        ) );
         if (count ( $comics ) > 0)
-            return view ( 'one' )->withDetails( $comics )->withQuery ( $q );
+            return view ( 'one', compact('comics',$comics));
 
     }
-    return view ( 'one' )->withMessage ( 'No Details found. Try to search again !' );
+//    return view ( 'investment.index',compact('comics',$comics));
 } );
 
-/* Route for get all records with paginate 6 records*/
-Route::get ( '/records', function () {
-    $dummyDetails = Customer::paginate(6);
-    return view ( 'investment.index' )->withComics($dummyDetails);
+
+
+
+
+
+Route::any( '/searchcustomer', function () {
+    $q = Input::get ( 'q' );
+    if($q != ""){
+        $comics = App\Customer::where ( 'cell_no', 'LIKE', '%' . $q . '%' )->get();
+//        $pagination = $comics->appends ( array (
+//            'q' => Input::get ( 'q' )
+//        ) );
+        if (count ( $comics ) > 0)
+            return view ( 'two', compact('comics',$comics));
+
+    }
+//    return view ( 'investment.index',compact('comics',$comics));
 } );
+/* Route for get all records with paginate 6 records*/
+//Route::get ( '/records', function () {
+//    $dummyDetails = Customer::paginate(6);
+//    return view ( 'investment.index' )->withComics($dummyDetails);
+//} );

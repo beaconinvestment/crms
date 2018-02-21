@@ -8,8 +8,10 @@
         <title>Beacon</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        {{--<link rel="stylesheet" href="{{asset('css/app.css')}}">--}}
+        {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -70,20 +72,22 @@
             /*}*/
             .be
             {
-                background-color: #0056b3;
+                background: #0056b3;
+
             }
             .title.h2, .title h2{
                color:white;
-                font-family:Georgia;
+                font-family: Georgia, serif;
             }
             .ni{
                 color:white;
-                font-family:Georgia;
+                font-family: Georgia, serif;
             }
+
         </style>
     </head>
-    <body class="be">
-        <div class="flex-center position-ref full-height">
+    <body class="be" >
+        <div class="flex-center position-ref full-height" >
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -101,14 +105,15 @@
 
                 </div>
                 <h3 class="ni">Coming soon....</h3>
-                <div class="links">
-                    <a href="/eloquent">Customer Table</a>
-                    <a href="/investment">Investment Table</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+               <a href="/eloquent"> <button type="button" class="btn btn-default btn-lg">Continue</button></a>
+                {{--<div class="links">--}}
+                    {{--<a href="/eloquent">Customer Table</a>--}}
+                    {{--<a href="/investment">Investment Table</a>--}}
+                    {{--<a href="https://laravel-news.com">News</a>--}}
+                    {{--<a href="https://forge.laravel.com">Forge</a>--}}
+                    {{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
 
-                </div>
+                {{--</div>--}}
             </div>
         </div>
     </body>

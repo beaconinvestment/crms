@@ -37,10 +37,24 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label for="price">Cell_no:</label>
+                <label for="Cell_no">Cell_no:</label>
                 <input type="text" class="form-control" name="cell_no">
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="total_amount">total_amount:</label>
+                <input type="text" class="form-control" name="cell_no">
+            </div>
+        </div>
+        {{--<div class="row">--}}
+            {{--<div class="col-md-4"></div>--}}
+            {{--<div class="form-group col-md-4">--}}
+                {{--<label for="investType">investType:</label>--}}
+                {{--<input type="text" class="form-control" name="cell_no">--}}
+            {{--</div>--}}
+        {{--</div>--}}
 </div>
 <div class="row">
     <div class="col-md-4"></div>
