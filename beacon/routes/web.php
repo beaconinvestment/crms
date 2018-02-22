@@ -24,7 +24,7 @@ Route::get('/', function () {
 //
 //});
 //Route::get('eloquent','beaconcontroller@Show_All');
-Route::resource('eloquent','BeaconsController');
+//Route::resource('eloquent','BeaconsController');
 Route::resource('eloquent','BeaconicController');
 Route::resource('investment','investmentController');
 
@@ -76,12 +76,15 @@ Route::any( '/search', function () {
 Route::any( '/searchcustomer', function () {
     $q = Input::get ( 'q' );
     if($q != ""){
-        $comics = App\Customer::where ( 'cell_no', 'LIKE', '%' . $q . '%' )->get();
+        $comics = App\Investment::where ( 'customer_id', 'LIKE', '%' . $q . '%' )->get();
+        $doom = App\Customer::where('id','LIKE', '%'. $q .'%')->get();
+
+
 //        $pagination = $comics->appends ( array (
 //            'q' => Input::get ( 'q' )
 //        ) );
         if (count ( $comics ) > 0)
-            return view ( 'two', compact('comics',$comics));
+            return view ( 'two', compact('comics',$comics,'doom',$doom));
 
     }
 //    return view ( 'investment.index',compact('comics',$comics));
@@ -91,3 +94,15 @@ Route::any( '/searchcustomer', function () {
 //    $dummyDetails = Customer::paginate(6);
 //    return view ( 'investment.index' )->withComics($dummyDetails);
 //} );
+
+//Route::get('/test',function(){
+//
+//$cook = App\Customer::where('fname','=','razaq khan')->get();
+//
+//return view('test')->with('cook',$cook);
+//
+//
+//});
+//
+//
+//

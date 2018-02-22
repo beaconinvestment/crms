@@ -6,10 +6,21 @@
     <meta charset="utf-8">
     <title>Create a Customer</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <style>
+        .bk{
+            height: 100px;
+            background-color: #0056b3;
+        }
+        .bk h2{
+            color: white;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <h2>Create A Customer</h2><br  />
+<div class="container" style="padding: 0px;margin: 0px;">
+    <div class="container col-lg-12  bk">
+    <h2 style="font-family: Georgia;">Create A Customer</h2><br  />
+    </div>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -30,15 +41,42 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" name="name">
+                <label for="id">Customer ID:</label>
+                <input type="text" class="form-control" name="id">
             </div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label for="Cell_no">Cell_no:</label>
+                <label for="fname">First Name:</label>
+                <input type="text" class="form-control" name="fname">
+            </div>
+        </div> <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="lname">Last Name:</label>
+                <input type="text" class="form-control" name="lname">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="cell_no">Cell_no:</label>
                 <input type="text" class="form-control" name="cell_no">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="cnic">CNIC:</label>
+                <input type="text" class="form-control" name="cnic">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" name="address">
             </div>
         </div>
         <div class="row">
@@ -48,13 +86,7 @@
                 <input type="text" class="form-control" name="cell_no">
             </div>
         </div>
-        {{--<div class="row">--}}
-            {{--<div class="col-md-4"></div>--}}
-            {{--<div class="form-group col-md-4">--}}
-                {{--<label for="investType">investType:</label>--}}
-                {{--<input type="text" class="form-control" name="cell_no">--}}
-            {{--</div>--}}
-        {{--</div>--}}
+
 </div>
 <div class="row">
     <div class="col-md-4"></div>

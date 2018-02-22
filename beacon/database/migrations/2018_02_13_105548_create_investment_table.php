@@ -16,11 +16,9 @@ class CreateInvestmentTable extends Migration
         Schema::create('investment', function(Blueprint $table)
         {
             $table->increments('id');
-
             $table->integer('total_amount'); // we'll use this to demonstrate searching by weight
             $table->string('customer_id'); // this will contain our foreign key to the Customer table
             $table->integer('investType'); // this will contain our foreign key to the Investment Type table
-
             $table->timestamps();
         });
     }

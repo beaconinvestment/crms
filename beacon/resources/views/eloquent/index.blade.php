@@ -25,64 +25,22 @@
     <h1>Beacon Investment CRMS</h1>
     <p>Welcome to crms system admin here you can edit , delete and manage your data....</p>
 </div>
-
-{{--<nav class="navbar navbar-default">--}}
-    {{--<div class="container-fluid">--}}
-        {{--<div class="navbar-header">--}}
-            {{--<a class="navbar-brand pull-left" href="#">Welcome Admin!!!!</a>--}}
-        {{--</div>--}}
-        {{--<ul class="nav navbar-nav">--}}
-            {{--<li class="active"><a href="/">Home</a></li>--}}
-
-        {{--</ul>--}}
-    {{--</div>--}}
-{{--</nav>--}}
-{{--<div class="container" style="margin-left: 0px;--}}
-    {{--margin-right: 0px;">--}}
-{{--<div class="container col-lg-2 pull-left" style="padding-right: 0px;--}}
-    {{--padding-left: 0px;">--}}
-
-    {{--<nav class="navbar navbar-default">--}}
-        {{--<div class="container-fluid">--}}
-            {{--<div class="navbar-header center-block">--}}
-                {{--<a class="navbar-brand pull-left" href="#"></a>--}}
-            {{--</div>--}}
-           {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
-            {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
-            {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
-            {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
-            {{--<a href="\eloquent"><button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-home"></span>Customers</button></a>--}}
-            {{--<ul class="nav navbar-nav">--}}
-
-
-            {{--</ul>--}}
-        {{--</div>--}}
-    {{--</nav>--}}
-
-
-{{--</div>--}}
 <div class="container col-lg-12">
 <br>
 </div>
 <div class="container col-lg-2" style="
     padding-left: 0px;
     padding-right: 0px;">
-
     <ul class="btn-group" style="padding-left: 0px;width: 98px;">
         <a href="\"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-home"></span></h3></button></a>
         <a href="\investment"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-user"></span></h3></button></a>
         <a href="\eloquent"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-share"></span></h3></button></a>
         <a href="\eloquent"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-edit"></span></h3></button></a>
         <a href="\eloquent"><button type="button" class="btn btn-primary btn-block text-center"><h3><span class="glyphicon glyphicon-camera"></span></h3></button></a>
-        {{--<button type="button" class="btn btn-primary btn-block text-center"><h2><span class="glyphicon glyphicon-book"></span></h2><br></button>--}}
-        {{--<button type="button" class="btn btn-primary btn-block text-center"><h2><span class="glyphicon glyphicon-share"></span></h2><br></button>--}}
     </ul>
 </div>
 <div class="container col-lg-10">
     <div class="container">
-
-
-
     </div>
     <div class="container col-lg-10">
         <form action="/searchcustomer" method="POST" role="search">
@@ -97,8 +55,7 @@
         </form>
         <br />
     <br />
-
-    @if (\Session::has('success'))
+        @if (\Session::has('success'))
         <div class="alert alert-success">
             <p>{{ \Session::get('success') }}</p>
         </div><br />

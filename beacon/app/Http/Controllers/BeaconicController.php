@@ -46,12 +46,7 @@ class BeaconicController extends Controller
 
 
         Customer::create($customer);
-        $customer = $this->validate(request(), [
-            'name' => 'required',
-            'cell_no' => 'required',
 
-
-        ]);
 
 
         return back()->with('success', 'Customer has been added');
