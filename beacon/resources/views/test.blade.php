@@ -1,5 +1,5 @@
 <html>
 <body>
-{{$cook}}
+<h1>its done!!!!!!!!!!!!</h1>
 </body>
 </html>

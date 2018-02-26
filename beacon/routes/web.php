@@ -27,6 +27,10 @@ Route::get('/', function () {
 //Route::resource('eloquent','BeaconsController');
 Route::resource('eloquent','BeaconicController');
 Route::resource('investment','investmentController');
+Route::get('/inv',function ( )
+{
+    return view('invtype');
+});
 
 //Route::get('gettwo',function(){
 //
@@ -106,3 +110,4 @@ Route::any( '/searchcustomer', function () {
 //
 //
 //
+Route::get('/test/{id},testcontroller@index');

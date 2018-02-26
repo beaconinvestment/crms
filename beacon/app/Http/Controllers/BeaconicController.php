@@ -5,6 +5,7 @@ use App\Customer;
 use App\Investment;
 use App\Investmenttype;
 use Illuminate\Http\Request;
+use Session;
 
 class BeaconicController extends Controller
 {
@@ -37,19 +38,42 @@ class BeaconicController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = $this->validate(request(), [
-            'name' => 'required',
+//        $customer = $this->validate(request(), [
+//            'id' => 'required',
+//            'fname' => 'required',
+//            'lname' => 'required',
+//            'cell_no' => 'required',
+//            'cnic' => 'required',
+//            'address' => 'required'
+//        ]);
+//
+//        $saveResult = Customer::create($customer);
+//
+//        $id = $saveResult->id;
+////        return back()->with('success', 'Customer has been added');
+//        $insert_second_array['customer_id'] = $id;
+//        Investment::create($insert_second_array);
+//        return view('investment.Add');
+       $g = $this->validate(request(), [
+
+                'id' => 'required',
+            'fname' => 'required',
+            'lname' => 'required',
             'cell_no' => 'required',
+            'cnic' => 'required',
+            'address' => 'required'
 
 
         ]);
+        $saveresult = Customer::create($g);
+        $ids =$saveresult->id;
+        Session::put('ids',$ids);
 
-
-        Customer::create($customer);
-
-
-
-        return back()->with('success', 'Customer has been added');
+//        $insert_second_array['customer_id'] = $ids;
+//        $insert_second_array = array("total_amount" => "400000");
+//
+//        Investment::create($insert_second_array);
+        return view('investment.Add');
     }
 
     /**
