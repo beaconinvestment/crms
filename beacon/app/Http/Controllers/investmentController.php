@@ -49,7 +49,8 @@ $investment = $request->except(['_token']);
 //        $savesum = Investment::create($investment);
             \DB::table('investment')->insert($investment);
 
-        return view('investment.index',compact('investment'));
+//        return view('investment.index',compact('investment'));
+        return view('welcome');
     }
 
     /**

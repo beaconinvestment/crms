@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style>
         .bk{
-            height: 100px;
+            margin-left: 8%;
+            margin-bottom: -5%;
+            height: 20%;
+            /*width: 2000px;*/
+            text-align: center;
             background-color: #0056b3;
+            border-radius: 0px 0px 30px 30px;
         }
         .bk h1{
             color: white;
@@ -19,8 +24,8 @@
 <body>
 
 <div class="container" style="padding: 0px;margin: 0px;">
-    <div class="container col-lg-12  bk">
-    <h1 style="font-family: Georgia;">Create A Customer</h1><br  />
+    <div class="container col-lg-12 bk">
+    <h1 style="font-family: Georgia;">Create A Customer</h1>
     </div>
     @if ($errors->any())
         <div class="alert alert-danger">
