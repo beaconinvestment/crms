@@ -97,7 +97,7 @@
      <div class="row">
     <div class="col-md-4"></div>
     <div class="form-group col-md-4">
-        <button type="submit" class="btn btn-success" style="margin-left:38px">Add Customer</button>
+        <button type="submit" class="btn btn-primary" style="background-color: #0056b3">Add Customer</button>
     </div>
 </div>
     </form>

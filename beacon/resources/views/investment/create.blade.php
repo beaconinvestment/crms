@@ -6,8 +6,13 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <style>
         .bk{
-            height: 100px;
+            /*margin-left: 8%;*/
+            margin-bottom: 2%;
+            height: 50px;
+            width: 80%;
+            text-align: center;
             background-color: #0056b3;
+            border-radius: 0px 0px 30px 30px;
         }
         .bk h1{
             color: white;
@@ -22,13 +27,13 @@
     <h1 style="font-family: Georgia;">Add Investment</h1><br  />
 </div>
 <div class="container col-lg-12 bk2" style="font-family: Georgia">
-    <br>
-    <br>
-    <h5>Add Investment here....</h5>
-    <br>
+    {{--<br>--}}
+    {{--<br>--}}
+    {{--<h5>Add Investment here....</h5>--}}
+    {{--<br>--}}
 </div>
 
-<div class="container col-lg-10">
+<div class="container col-lg-12">
     <div class="container">
     </div>
     {{--<div class="container col-lg-10">--}}
@@ -85,8 +90,8 @@
         {{--</table>--}}
     {{--</div>--}}
 {{--</div>--}}
-<div class="container col-lg-12" style="padding-left: 200px">
-    <form method="post" action="{{url('investment')}}">
+<div class="container col-lg-8" >
+    <form method="post" class="col-md-12" action="{{url('investment')}}">
         {{csrf_field()}}
         {{--<div class="row col-md-4">--}}
             {{--<label for="customer_id">Customer_id</label>--}}
@@ -100,28 +105,28 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label for="customer_id">customer_id:</label>
+                <label for="customer_id">Customer ID:</label>
                 <input type="text" class="form-control" name="customer_id">
             </div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label for="total_amount">total_amount:</label>
+                <label for="total_amount">Amount of Investment:</label>
                 <input type="text" class="form-control" name="total_amount">
             </div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <label for="investType">InvestType:</label>
+                <label for="investType">Type of Investment:</label>
                 <input type="text" class="form-control" name="InvestType">
             </div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>
             <div class="form-group col-md-4">
-                <button type="submit" class="btn btn-success" style="margin-left:38px">Add Investment</button>
+                <button type="submit" class="btn btn-primary" style="background-color: #0056b3">Add Investment</button>
             </div>
         </div>
     </form>
