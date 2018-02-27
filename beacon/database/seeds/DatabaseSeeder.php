@@ -32,17 +32,17 @@ class DatabaseSeeder extends Seeder
 //            'cnic' => '61101787878',
 //            'address' => 'karachi,pakistan'
 //        ]);
-//        $this->command->info('The customers are alive!');
-//
-//        DB::table('investment_type')->insert([
-//            'type' => 'Residential'
-//        ]);
-//
-//        DB::table('investment')->insert([
-//           'total_amount'=> '45000',
-//            'customer_id' => 'bi00001',
-//            'investType'=>'3'
-//        ]);
+        $this->command->info('The customers are alive!');
+
+        DB::table('investment_type')->insert([
+            'type' => 'Residential'
+        ]);
+
+        DB::table('investment')->insert([
+           'total_amount'=> '45000',
+            'customer_id' => 'bi00001',
+            'investType'=>'3'
+        ]);
 //        DB::table('customers')->insert([
 //
 //            'id' => 'bi00002',
@@ -52,17 +52,18 @@ class DatabaseSeeder extends Seeder
 //            'cnic' => '611017878454',
 //            'address' => 'lahore,pakistan'
 //        ]);
-//        $this->command->info('The customers are alive!');
-//
-//        DB::table('investment_type')->insert([
-//            'type' => 'Commertial'
-//        ]);
-//
-//        DB::table('investment')->insert([
-//            'total_amount'=> '425000',
-//            'customer_id' => 'bi00002',
-//            'investType'=>'3'
-//        ]); DB::table('customers')->insert([
+        $this->command->info('The customers are alive!');
+
+        DB::table('investment_type')->insert([
+            'type' => 'Commertial'
+        ]);
+
+        DB::table('investment')->insert([
+            'total_amount'=> '425000',
+            'customer_id' => 'bi00002',
+            'investType'=>'3'
+        ]);
+//        DB::table('customers')->insert([
 //
 //        'id' => 'bi00003',
 //        'fname' => 'Ali khan',
@@ -71,17 +72,18 @@ class DatabaseSeeder extends Seeder
 //        'cnic' => '61101723148',
 //        'address' => 'Peshawar,pakistan'
 //    ]);
-//        $this->command->info('The customers are alive!');
-//
-//        DB::table('investment_type')->insert([
-//            'type' => 'Residential'
-//        ]);
-//
-//        DB::table('investment')->insert([
-//            'total_amount'=> '2105000',
-//            'customer_id' => 'bi00003',
-//            'investType'=>'3'
-//        ]); DB::table('customers')->insert([
+        $this->command->info('The customers are alive!');
+
+        DB::table('investment_type')->insert([
+            'type' => 'Residential'
+        ]);
+
+        DB::table('investment')->insert([
+            'total_amount'=> '2105000',
+            'customer_id' => 'bi00003',
+            'investType'=>'3'
+        ]);
+// DB::table('customers')->insert([
 //
 //        'id' => 'bi00004',
 //        'fname' => 'shoiab',
@@ -90,11 +92,11 @@ class DatabaseSeeder extends Seeder
 //        'cnic' => '61101723238',
 //        'address' => 'multan,pakistan'
 //    ]);
-//        $this->command->info('The customers are alive!');
-//
-//        DB::table('investment_type')->insert([
-//            'type' => 'Residential'
-//        ]);
+        $this->command->info('The customers are alive!');
+
+        DB::table('investment_type')->insert([
+            'type' => 'Residential'
+        ]);
 
         DB::table('investment')->insert([
             'total_amount'=> '785000',

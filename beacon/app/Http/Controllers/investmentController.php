@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Investment;
+use App\Customer;
 use Illuminate\Http\Request;
 
 class investmentController extends Controller
@@ -26,7 +27,8 @@ class investmentController extends Controller
      */
     public function create()
     {
-        return view('investment.Add');
+//    {$customer = Customer::all();
+        return view('investment.create');
     }
 
     /**
@@ -38,17 +40,16 @@ class investmentController extends Controller
     public function store(Request $request)
     {
 
-        $investment = $this->validate(request(), [
-
+        $this->validate($request, [
+            'customer_id' => 'required',
             'total_amount' => 'required',
-            'investType' => 'required'
-
 
         ]);
+$investment = $request->except(['_token']);
+//        $savesum = Investment::create($investment);
+            \DB::table('investment')->insert($investment);
 
-        Investment::create($investment);
-
-        return view('investment.index');
+        return view('investment.index',compact('investment'));
     }
 
     /**
@@ -81,18 +82,16 @@ class investmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $investment = Investment::find($id);
-        $this->validate(request(), [
-            'total_amount' => 'required',
-            'customer_id' => 'required',
-            'investType' => 'required'
-        ]);
-        $investment->total_amount = $request->get('total_amount');
-        $investment->customer_id = $request->get('customer_id');
-        $investment->save();
-        return redirect('eloquent')->with('success',' Investment has been updated');
+
+//        $investment = $this->validate(request(), [
+//            'customer_id' => 'required',
+//            'total_amount' => 'required',
+//            'investType' => 'required'
+//        ]);
+//        Investment::create($investment);
+//        return view('investment.index');
     }
 
     /**

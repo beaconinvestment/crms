@@ -50,49 +50,75 @@
     <div class="container">
      </div>
     <div class="container col-lg-10">
-        <div class="card bn" style="font-family: Georgia;background-color: #9fcdff">
-            <div class="card-body">
-                @foreach($doom as $dooms)
-                    <h3 class="card-title"><h3>Customer Name: {{$dooms->fname}}</h3></h3>
-                    <h3 class="card-subtitle mb-2 text-muted"><h3>Cell-no: {{$dooms->cell_no}}</h3></h3>
-                        <h3 class="card-subtitle mb-2 text-muted"><h3>Address: {{$dooms->address}}</h3></h3>
-                @endforeach
+        {{--<div class="card bn" style="font-family: Georgia;background-color: #9fcdff">--}}
+            {{--<div class="card-body">--}}
+                {{--@foreach($doom as $dooms)--}}
+                    {{--<h3 class="card-title"><h3>Customer Name: {{$dooms->fname}}</h3></h3>--}}
+                    {{--<h3 class="card-subtitle mb-2 text-muted"><h3>Cell-no: {{$dooms->cell_no}}</h3></h3>--}}
+                        {{--<h3 class="card-subtitle mb-2 text-muted"><h3>Address: {{$dooms->address}}</h3></h3>--}}
+                {{--@endforeach--}}
                 {{--@foreach($comics as $comic)--}}
                     {{--<h6 class="card-subtitle mb-2 text-muted"><h3>Investment:Rs {{$comic->total_amount}}/-</h3></h6>--}}
                 {{--@endforeach--}}
-                   <h3><a href="/eloquent" class="btn btn-primary pull-right">Back</a></h3>
-            </div>
-        </div>
+                   {{--<h3><a href="/eloquent" class="btn btn-primary pull-right">Back</a></h3>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="container col-lg-12">
             <br>
         </div>
         <table class="table table-striped">
             <thead>
             <tr><th>Beacon ID</th>
-                <th>Name</th>
+                <th>Firstname Name</th>
                 <th>Cell N0</th>
-                <th>Investment</th>
 
             </tr>
             </thead>
             <tbody>
-
-                <tr>
+            <tr>
                     @foreach($doom as $dooms)
-                        <td>{{$dooms->id}}</td>
+                    <td>{{$dooms->id}}</td>
                     <td>{{$dooms->fname}}</td>
                     <td>{{$dooms->cell_no}}</td>
                     @endforeach
-                    @foreach($comics as $comic)
-                            <td>{{$comic->total_amount}}</td>
-                        @endforeach
-
 
                 </tr>
-
             </tbody>
         </table>
     </div>
+</div>
+<div class="container col-lg-12" style="padding-left: 200px">
+    <form method="post" action="{{url('investment')}}">
+        {{csrf_field()}}
+
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="customer_id">customer_id:</label>
+                <input type="text" class="form-control" name="customer_id">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="total_amount">total_amount:</label>
+                <input type="text" class="form-control" name="total_amount">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label for="investType">InvestType:</label>
+                <input type="text" class="form-control" name="InvestType">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+                <button type="submit" class="btn btn-success" style="margin-left:38px">Add Investment</button>
+            </div>
+        </div>
+    </form>
 </div>
 </body>
 </html>

@@ -65,6 +65,7 @@ class BeaconicController extends Controller
 
 
         ]);
+       $customer = Customer::all();
         $saveresult = Customer::create($g);
         $ids =$saveresult->id;
         Session::put('ids',$ids);
@@ -73,7 +74,8 @@ class BeaconicController extends Controller
 //        $insert_second_array = array("total_amount" => "400000");
 //
 //        Investment::create($insert_second_array);
-        return view('investment.Add');
+//        return view('investment.create',compact('customer'));
+        return redirect()->action('investmentController@create');
     }
 
     /**
